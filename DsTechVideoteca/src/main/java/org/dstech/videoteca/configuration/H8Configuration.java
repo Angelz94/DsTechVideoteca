@@ -49,10 +49,10 @@ public class H8Configuration {
 
 	private DataSource getDataSource() {
 		DriverManagerDataSource source = new DriverManagerDataSource();
-		source.setDriverClassName(environment.getRequiredProperty("database.driver"));
-		source.setUrl(environment.getRequiredProperty("database.url"));
-		source.setUsername(environment.getProperty("database.username"));
-		source.setPassword(environment.getProperty("database.password"));
+		source.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
+		source.setUrl(environment.getRequiredProperty("jdbc.url"));
+		source.setUsername(environment.getProperty("jdbc.username"));
+		source.setPassword(environment.getProperty("jdbc.password"));
 		return source;
 	}
 	

@@ -25,10 +25,10 @@ public class SpringConfiguration {
 		return resolver;
 	}
 	
-	@Bean
-	public MessageSource messageSource(){
-		ResourceBundleMessageSource source = new ResourceBundleMessageSource();
-		source.setBasename("messaggi");
-		return source;
-	}
+//	@Bean
+//	public MessageSource messageSource(){
+//		ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+//		source.setBasename("messaggi");
+//		return source;
+//	}
 }
