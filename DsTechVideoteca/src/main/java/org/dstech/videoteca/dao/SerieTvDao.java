@@ -15,4 +15,13 @@ public class SerieTvDao extends AbstractDao<Integer, SerieTv>{
 		return (List<SerieTv>) criteria.list();
 	}
 	
+	public SerieTv findByID(int id) {
+		return getByKey(id);
+	}
+
+	public boolean salvaSerieTv(SerieTv serieTv) {
+		persist(serieTv);
+		return true;
+	}
+	
 }

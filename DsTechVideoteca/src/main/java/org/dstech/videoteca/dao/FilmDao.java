@@ -9,6 +9,15 @@ import org.springframework.stereotype.Repository;
 @Repository("FilmDao")
 public class FilmDao extends AbstractDao<Integer, Film>{
 	
+	public Film findByID(int id) {
+		return getByKey(id);
+	}
+
+	public boolean salvaFilm(Film film) {
+		persist(film);
+		return true;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Film> trovaTuttiFilm() {
 		Criteria criteria = createEntityCriteria();	

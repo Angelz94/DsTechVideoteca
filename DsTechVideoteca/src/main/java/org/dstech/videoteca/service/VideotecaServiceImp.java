@@ -7,6 +7,8 @@ import org.dstech.videoteca.dao.CategorieDao;
 import org.dstech.videoteca.dao.FilmDao;
 import org.dstech.videoteca.dao.PersonaDao;
 import org.dstech.videoteca.dao.SerieTvDao;
+import org.dstech.videoteca.model.Attore;
+import org.dstech.videoteca.model.Categoria;
 import org.dstech.videoteca.model.Film;
 import org.dstech.videoteca.model.Persona;
 import org.dstech.videoteca.model.SerieTv;
@@ -34,6 +36,36 @@ public class VideotecaServiceImp implements IVideotecaService{
 	@Autowired
 	private SerieTvDao daoSerieTv;
 	
+	public void modificaFilm(Film film) {
+		Film entity = daoFilm.findByID(film.getId());
+		if(entity!=null){
+			entity.setTitolo(film.getTitolo());
+			entity.setDurata(film.getDurata());
+		}
+	}
+	
+	public void modificaCategoria(Categoria categoria) {
+		Categoria entity = daoCategoria.findByID(categoria.getId());
+		if(entity!=null){
+			entity.setNome(categoria.getNome());
+			entity.setDescrizione(categoria.getDescrizione());
+		}
+	}
+	
+	public void modificaAttore(Attore attore) {
+		Attore entity = daoAttore.findByID(attore.getId());
+		if(entity!=null){
+			entity.setNome(attore.getNome());
+			entity.setCognome(attore.getCognome());
+		}
+	}
+	
+	public void modificaSerieTv(SerieTv serieTv) {
+		SerieTv entity = daoSerieTv.findByID(serieTv.getId());
+		if(entity!=null){
+			entity.setTitolo(serieTv.getTitolo());
+		}
+	}
 	public Persona findById(int id) {
 		return daoPersona.findByID(id);
 	}
@@ -62,5 +94,45 @@ public class VideotecaServiceImp implements IVideotecaService{
 	
 	public List<SerieTv> trovaTutteSerieTv(){
 		return daoSerieTv.trovaTuttiSerieTv();
+	}
+	
+	public List<Categoria> trovaTutteCategorie(){
+		return daoCategoria.trovaTutteCategorie();
+	}
+	
+	public List<Attore> trovaTuttiAttori(){
+		return daoAttore.trovaTuttiAttori();
+	}
+	
+	public Attore findAttoreById(int id) {
+		return daoAttore.findByID(id);
+	}
+
+	public void salvaAttore(Attore employee) {
+		daoAttore.salvaAttore(employee);
+	}
+	
+	public Categoria findCategoriaById(int id) {
+		return daoCategoria.findByID(id);
+	}
+
+	public void salvaCategoria(Categoria categoria) {
+		daoCategoria.salvaCategoria(categoria);
+	}
+	
+	public Film findFilmById(int id) {
+		return daoFilm.findByID(id);
+	}
+
+	public void salvaFilm(Film film) {
+		daoFilm.salvaFilm(film);
+	}
+	
+	public SerieTv findSerieTvById(int id) {
+		return daoSerieTv.findByID(id);
+	}
+
+	public void salvaSerieTv(SerieTv serieTv) {
+		daoSerieTv.salvaSerieTv(serieTv);
 	}
 }
