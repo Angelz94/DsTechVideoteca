@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -21,21 +22,29 @@ import javax.validation.constraints.Size;
 
 public class Categoria implements java.io.Serializable {
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "categoria_film", catalog = "videoteca", joinColumns = { 
-			@JoinColumn(name = "CATEGORIA_ID", nullable = false, updatable = false) }, 
-			inverseJoinColumns = { @JoinColumn(name = "FILM_ID", 
-					nullable = false, updatable = false) })
+@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria")
 	
-	private Set<Film> film=new HashSet<Film>(0);
+	private Set<SerieTv> serieTv;
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "categoria_serieTv", catalog = "videoteca", joinColumns = { 
-			@JoinColumn(name = "CATEGORIA_ID", nullable = false, updatable = false) }, 
-			inverseJoinColumns = { @JoinColumn(name = "SERIETV_ID", 
-					nullable = false, updatable = false) })
+	public Set<SerieTv> getSerieTv() {
+		return serieTv;
+	}
+
+	public void setSerieTv(Set<SerieTv> serieTv) {
+		this.serieTv = serieTv;
+	}
 	
-	private Set<SerieTv> serieTv=new HashSet<SerieTv>(0);
+@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria")
+	
+	private Set<Film> film;
+	
+	public Set<Film> getFilm() {
+		return film;
+	}
+
+	public void setFilm(Set<Film> film) {
+		this.film = film;
+	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

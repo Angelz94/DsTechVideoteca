@@ -9,7 +9,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
@@ -25,8 +27,19 @@ public class Film implements ProdottoCinematografico,java.io.Serializable{
 	@ManyToMany(fetch=FetchType.LAZY,mappedBy= "film")
 private Set<Attore> attore=new HashSet<Attore>(0);
 
-	@ManyToMany(fetch=FetchType.LAZY,mappedBy= "film")
-	private Set<Categoria> categoria=new HashSet<Categoria>(0);
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "FILM", nullable = false)
+	private Categoria categoria;
+
+	
+	
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 	
 //public Film(){
 //		
