@@ -12,10 +12,42 @@
 <body>
 	<div class="jumbotron">
 	  	<div class="container">
-	    	<h1>Hello, world!</h1>
-		  	<p>...</p>
-		  	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+	    	<h1 style="text-align: center;">-- VIDEOTECA DsTeCh --</h1>
 	  	</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<h3 style="text-align: center;">
+					-- Benvenuto nella Videoteca DsTech --
+				</h3>
+				<br>
+				<form>
+					  <div class="form-group">
+					    <label for="exampleInputEmail1">Email</label>
+					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputPassword1">Password</label>
+					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+					</form>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-primary">
+				  	<div class="panel-heading">
+				    	<h3 class="panel-title" style="text-align: center;">-- Menu --</h3>
+				  	</div>
+				  	<div class="panel-body">
+						<p><a class="btn btn-primary btn-lg btn-block" href="#" role="button" style="text-aling: center;">Lista Film</a></p>
+						<p><a class="btn btn-primary btn-lg btn-block" href="#" role="button" style="text-aling: center;">Lista SerieTv</a></p>
+						<p><a class="btn btn-primary btn-lg btn-block" href="#" role="button" style="text-aling: center;">Lista Attori</a></p>
+						<p><a class="btn btn-primary btn-lg btn-block" href="#" role="button" style="text-aling: center;">Lista Categorie</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
