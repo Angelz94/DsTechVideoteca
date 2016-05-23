@@ -7,11 +7,13 @@ import org.dstech.videoteca.dao.CategorieDao;
 import org.dstech.videoteca.dao.FilmDao;
 import org.dstech.videoteca.dao.PersonaDao;
 import org.dstech.videoteca.dao.SerieTvDao;
+import org.dstech.videoteca.dao.StagioneDao;
 import org.dstech.videoteca.model.Attore;
 import org.dstech.videoteca.model.Categoria;
 import org.dstech.videoteca.model.Film;
 import org.dstech.videoteca.model.Persona;
 import org.dstech.videoteca.model.SerieTv;
+import org.dstech.videoteca.model.Stagione;
 import org.dstech.videoteca.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +37,9 @@ public class VideotecaServiceImp implements IVideotecaService{
 	
 	@Autowired
 	private SerieTvDao daoSerieTv;
+	
+	@Autowired
+	private StagioneDao daoStagione;
 	
 	public void modificaFilm(Film film) {
 		Film entity = daoFilm.findByID(film.getId());
@@ -134,5 +139,17 @@ public class VideotecaServiceImp implements IVideotecaService{
 
 	public void salvaSerieTv(SerieTv serieTv) {
 		daoSerieTv.salvaSerieTv(serieTv);
+	}
+	
+	public void salvaStagione(Stagione stagione) {
+		daoStagione.salvaStagione(stagione);
+	}
+	
+	public Stagione findStagioneByID(int id) {
+		return daoStagione.findStagioneByID(id);
+	}
+	
+	public List<Stagione> trovaTutteStagioni(){
+		return daoStagione.trovaTutteStagioni();
 	}
 }

@@ -7,6 +7,7 @@ import org.dstech.videoteca.model.Categoria;
 import org.dstech.videoteca.model.Persona;
 import org.dstech.videoteca.model.SerieTv;
 import org.dstech.videoteca.model.Film;
+import org.dstech.videoteca.model.Stagione;
 import org.dstech.videoteca.model.User;
 
 public interface IVideotecaService {
@@ -51,4 +52,9 @@ public interface IVideotecaService {
 	
 	void salvaSerieTv(SerieTv serieTv);
 
+	void salvaStagione(Stagione stagione);
+	
+	Stagione findStagioneByID(int id);
+	
+	List<Stagione> trovaTutteStagioni();
 }
