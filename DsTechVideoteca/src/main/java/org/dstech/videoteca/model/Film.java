@@ -28,7 +28,7 @@ public class Film implements ProdottoCinematografico,java.io.Serializable{
 private Set<Attore> attore=new HashSet<Attore>(0);
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "FILM", nullable = false)
+	@JoinColumn(name = "CATEGORIA", nullable = false)
 	private Categoria categoria;
 
 	
