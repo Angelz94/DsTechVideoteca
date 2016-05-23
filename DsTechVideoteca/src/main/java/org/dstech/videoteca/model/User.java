@@ -11,7 +11,7 @@ import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
-public abstract class User implements Persona{
+public class User implements Persona{
 
 
 	@Id
@@ -32,6 +32,10 @@ public abstract class User implements Persona{
 	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
 	private LocalDate data_di_nascita;
 	
+	@Size(min = 1, max = 50)
+	@Column(name = "CF", nullable = false)
+	private String CF;
+
 	@Size(min=1, max=50) 
 	@Column(name = "USER", nullable = false)
 	private String user;
@@ -71,7 +75,15 @@ public abstract class User implements Persona{
 	public void setDataDiNascita(LocalDate data_di_nascita) {
 		this.data_di_nascita = data_di_nascita;
 	}
-
+	
+	public String getCF(String CF) {
+		return CF;
+	}
+	
+	public void setCF(String CF) {
+		this.setCF(CF);
+		
+	}
 	public String getUser() {
 		return user;
 	}
@@ -93,6 +105,8 @@ public abstract class User implements Persona{
 		return "User [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", data_di_nascita=" + data_di_nascita
 				+ ", user=" + user + ", pass=" + pass + "]";
 	}
+
+	
 
 	
 }
