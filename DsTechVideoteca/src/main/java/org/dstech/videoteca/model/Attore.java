@@ -33,7 +33,7 @@ public abstract class Attore implements Persona {
 
 	@Size(min = 1, max = 50)
 	@Column(name = "CF", nullable = false)
-	private String cF;
+	private String CF;
 
 	public int getId() {
 		return id;
@@ -67,18 +67,18 @@ public abstract class Attore implements Persona {
 		this.data_di_nascita = data_di_nascita;
 	}
 
-	public String getcF() {
-		return cF;
+	public String getCF() {
+		return CF;
 	}
 
-	public void setcF(String cF) {
-		this.cF = cF;
+	public void setcF(String CF) {
+		this.CF = CF;
 	}
 
 	@Override
 	public String toString() {
 		return "Attore [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", data_di_nascita=" + data_di_nascita
-				+ ", cF=" + cF + "]";
+				+ ", CF=" + CF + "]";
 	}
 
 }

@@ -9,4 +9,9 @@ public interface Persona {
 	public String getCognome();
 	public LocalDate getDataDiNascita();
 	
+	public void setNome(String nome);
+	public void setCognome(String cognome);
+	public void setDataDiNascita(LocalDate data_di_nascita);
+	public void setCF(String CF);
+	
 }
