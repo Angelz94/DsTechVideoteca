@@ -59,11 +59,11 @@ public abstract class Attore implements Persona {
 		this.cognome = cognome;
 	}
 
-	public LocalDate getData_di_nascita() {
+	public LocalDate getDataDiNascita() {
 		return data_di_nascita;
 	}
 
-	public void setData_di_nascita(LocalDate data_di_nascita) {
+	public void setDataDiNascita(LocalDate data_di_nascita) {
 		this.data_di_nascita = data_di_nascita;
 	}
 

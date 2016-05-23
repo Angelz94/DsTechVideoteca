@@ -4,9 +4,9 @@ import org.joda.time.LocalDate;
 
 public interface Persona {
 
-	public int id();
-	public String nome();
-	public String cognome();
-	public LocalDate data_di_nascita();
+	public int getId();
+	public String getNome();
+	public String getCognome();
+	public LocalDate getDataDiNascita();
 	
 }
