@@ -6,13 +6,14 @@ import org.dstech.videoteca.dao.PersonaDao;
 import org.dstech.videoteca.dao.ProdottoCinematograficoDao;
 import org.dstech.videoteca.model.Film;
 import org.dstech.videoteca.model.Persona;
+import org.dstech.videoteca.model.SerieTv;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service("IVideotecaService")
 @Transactional
-public class VideotecaServiceImp {
+public class VideotecaServiceImp implements IVideotecaService{
 
 	@Autowired
 	private PersonaDao daoPersona;
@@ -39,10 +40,16 @@ public class VideotecaServiceImp {
 	}
 	
 	public List<Persona> trovaPersone() {
-		return daoPersona.trovaAttori();
+		//return daoPersona.trovaAttori();
+		return null;
 	}
 	
 	public List<Film> trovaTuttiFilm() {
 		return daoCinematografico.trovaTuttiFilm();
+	}
+	
+	public List<SerieTv> trovaTutteSerieTv(){
+		
+		return null;
 	}
 }
