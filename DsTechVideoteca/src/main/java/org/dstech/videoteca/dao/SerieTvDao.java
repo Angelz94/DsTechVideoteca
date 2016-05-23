@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class SerieTvDao extends AbstractDao<Integer, SerieTv>{
 
 	@SuppressWarnings("unchecked")
-	public List<SerieTv> trovaTuttiFilm() {
+	public List<SerieTv> trovaTuttiSerieTv() {
 		Criteria criteria = createEntityCriteria();
 		return (List<SerieTv>) criteria.list();
 	}

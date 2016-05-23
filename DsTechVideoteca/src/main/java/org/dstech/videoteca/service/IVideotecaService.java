@@ -5,17 +5,18 @@ import java.util.List;
 import org.dstech.videoteca.model.Persona;
 import org.dstech.videoteca.model.SerieTv;
 import org.dstech.videoteca.model.Film;
+import org.dstech.videoteca.model.User;
 
 public interface IVideotecaService {
 	
 	Persona findById(int id);
 	
-	void salvaPersona(Persona persona);
+	void salvaPersona(User persona);
 	
-	void modificaPersona(Persona persona);
+	void modificaPersona(User persona);
 
 	//trova user
-	List<Persona> trovaPersone(); 
+	List<User> trovaPersone(); 
 	
 	List<Film> trovaTuttiFilm();
 	

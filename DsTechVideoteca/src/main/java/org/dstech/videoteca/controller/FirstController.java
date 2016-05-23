@@ -1,8 +1,7 @@
 package org.dstech.videoteca.controller;
 
 import java.util.List;
-
-import org.dstech.videoteca.model.Persona;
+import org.dstech.videoteca.model.User;
 import org.dstech.videoteca.service.IVideotecaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -25,7 +24,7 @@ public class FirstController {
 
 	@RequestMapping(value = { "/", "/trovaPersone" }, method = RequestMethod.GET)
 	public String trovaPersone(ModelMap model) {
-		List<Persona> persona = service.trovaPersone();
+		List<User> persona = service.trovaPersone();
 		model.addAttribute("persona", persona); // la setto come attributo
 		return "index"; // ritorno nella pagina
 	}

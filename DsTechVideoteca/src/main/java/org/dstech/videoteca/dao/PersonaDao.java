@@ -3,23 +3,23 @@ package org.dstech.videoteca.dao;
 
 import java.util.List;
 
-import org.dstech.videoteca.model.Persona;
+import org.dstech.videoteca.model.User;
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
 
 @Repository("personaDao")
-public class PersonaDao extends AbstractDao<Integer, Persona>{
+public class PersonaDao extends AbstractDao<Integer, User>{
 	
-	public Persona findByID(int id) {
+	public User findByID(int id) {
 		return getByKey(id);
 	}
 
-	public boolean salvaPersona(Persona employee) {
+	public boolean salvaPersona(User employee) {
 		persist(employee);
 		return true;
 	}
 	
-	public boolean eliminaPersonaById(Persona employee) {
+	public boolean eliminaPersonaById(User employee) {
 		// TODO Auto-generated method stub
 		/*Query query = getSession().createSQLQuery("delete from employee where ssn = :ssn");
 		query.setString("ssn", ssn);
@@ -29,10 +29,10 @@ public class PersonaDao extends AbstractDao<Integer, Persona>{
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Persona> trovaAttori() {
+	public List<User> trovaTuttiUser() {
 		Criteria criteria = createEntityCriteria();
 		// TODO Auto-generated method stub
-		return (List<Persona>) criteria.list();
+		return (List<User>) criteria.list();
 	}
 
 }
