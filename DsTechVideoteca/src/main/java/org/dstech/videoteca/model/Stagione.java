@@ -1,11 +1,33 @@
 package org.dstech.videoteca.model;
 
+
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-public class Stagione {
+@Entity
+@Table(name = "stagione",catalog ="videoteca")
+
+public class Stagione implements java.io.Serializable {
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "STAGIONI", nullable = false)
+	private SerieTv serieTv;
+
+	
+	
+	public SerieTv getSerieTv() {
+		return serieTv;
+	}
+
+	public void setSerieTv(SerieTv serieTv) {
+		this.serieTv = serieTv;
+	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,6 +67,7 @@ public class Stagione {
 	public String toString() {
 		return "Stagione [id=" + id + ", numeroPuntate=" + numeroPuntate + ", annoProduzione=" + annoProduzione + "]";
 	}
+
 	
 
 }
