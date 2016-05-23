@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.dstech.videoteca.model.Stagione;
 import org.hibernate.Criteria;
+import org.springframework.stereotype.Repository;
 
+@Repository("StagioneDao")
 public class StagioneDao extends AbstractDao<Integer, Stagione>{
 
 	@SuppressWarnings("unchecked")
