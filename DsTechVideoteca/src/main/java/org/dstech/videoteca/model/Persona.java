@@ -1,12 +1,12 @@
 package org.dstech.videoteca.model;
 
-import java.util.Date;
+import org.joda.time.LocalDate;
 
 public interface Persona {
 
 	public int id();
 	public String nome();
 	public String cognome();
-	public Date dataDiNascita();
+	public LocalDate data_di_nascita();
 	
 }

@@ -1,12 +1,15 @@
 package org.dstech.videoteca.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.Type;
+import org.joda.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 public abstract class Attore implements Persona {
 
@@ -18,8 +21,15 @@ public abstract class Attore implements Persona {
 	@Column(name = "NOME", nullable = false)
 	private String nome;
 
-	@Column(name = "DATA", nullable = false)
-	private Date dataDiNascita;
+	@Size(min = 1, max = 50)
+	@Column(name = "COGNOME", nullable = false)
+	private String cognome;
+
+	@NotNull
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@Column(name = "data_di_nascita", nullable = false)
+	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+	private LocalDate data_di_nascita;
 
 	@Size(min = 1, max = 50)
 	@Column(name = "CF", nullable = false)
@@ -41,12 +51,20 @@ public abstract class Attore implements Persona {
 		this.nome = nome;
 	}
 
-	public Date getDataDiNascita() {
-		return dataDiNascita;
+	public String getCognome() {
+		return cognome;
 	}
 
-	public void setDataDiNascita(Date dataDiNascita) {
-		this.dataDiNascita = dataDiNascita;
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public LocalDate getData_di_nascita() {
+		return data_di_nascita;
+	}
+
+	public void setData_di_nascita(LocalDate data_di_nascita) {
+		this.data_di_nascita = data_di_nascita;
 	}
 
 	public String getcF() {
@@ -57,5 +75,10 @@ public abstract class Attore implements Persona {
 		this.cF = cF;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Attore [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", data_di_nascita=" + data_di_nascita
+				+ ", cF=" + cF + "]";
+	}
+
 }
