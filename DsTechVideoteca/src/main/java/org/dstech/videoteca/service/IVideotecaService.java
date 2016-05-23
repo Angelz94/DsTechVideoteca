@@ -14,6 +14,7 @@ public interface IVideotecaService {
 	
 	void modificaPersona(Persona persona);
 
+	//trova user
 	List<Persona> trovaPersone(); 
 	
 	List<Film> trovaTuttiFilm();

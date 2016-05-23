@@ -3,7 +3,7 @@ package org.dstech.videoteca.service;
 import java.util.List;
 
 import org.dstech.videoteca.dao.PersonaDao;
-import org.dstech.videoteca.dao.ProdottoCinematograficoDao;
+import org.dstech.videoteca.dao.FilmDao;
 import org.dstech.videoteca.model.Film;
 import org.dstech.videoteca.model.Persona;
 import org.dstech.videoteca.model.SerieTv;
@@ -18,8 +18,11 @@ public class VideotecaServiceImp implements IVideotecaService{
 	@Autowired
 	private PersonaDao daoPersona;
 	
+	/*@Autowired
+	private ProdottoCinematograficoDao daoCinematografico;*/
+	
 	@Autowired
-	private ProdottoCinematograficoDao daoCinematografico;
+	private FilmDao daoFilm;
 	
 	public Persona findById(int id) {
 		return daoPersona.findByID(id);
@@ -45,7 +48,7 @@ public class VideotecaServiceImp implements IVideotecaService{
 	}
 	
 	public List<Film> trovaTuttiFilm() {
-		return daoCinematografico.trovaTuttiFilm();
+		return daoFilm.trovaTuttiFilm();
 	}
 	
 	public List<SerieTv> trovaTutteSerieTv(){

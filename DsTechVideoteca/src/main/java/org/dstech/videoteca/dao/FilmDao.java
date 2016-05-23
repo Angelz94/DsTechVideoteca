@@ -3,13 +3,11 @@ package org.dstech.videoteca.dao;
 import java.util.List;
 
 import org.dstech.videoteca.model.Film;
-import org.dstech.videoteca.model.Persona;
-import org.dstech.videoteca.model.ProdottoCinematografico;
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
 
-@Repository("ProdottoCinematograficoDao")
-public class ProdottoCinematograficoDaoImpl extends AbstractDao<Integer, ProdottoCinematografico> implements ProdottoCinematograficoDao{
+@Repository("FilmDao")
+public class FilmDao extends AbstractDao<Integer, Film>{
 
 	public List<Film> trovaTuttiFilm() {
 		Criteria criteria = createEntityCriteria();
