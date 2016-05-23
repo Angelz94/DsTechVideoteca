@@ -2,14 +2,13 @@ package org.dstech.videoteca.controller;
 
 import java.util.List;
 
+import org.dstech.videoteca.model.Stagione;
 import org.dstech.videoteca.model.User;
 import org.dstech.videoteca.model.SerieTv;
 import org.dstech.videoteca.model.Attore;
 import org.dstech.videoteca.model.Categoria;
 import org.dstech.videoteca.model.Film;
-
 import org.dstech.videoteca.service.IVideotecaService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
@@ -59,15 +58,13 @@ public class FirstController {
 		model.addAttribute("categorie", categorie); 
 		return "all_categorie";
 	}
-	
-	
-	//STAGIONE
-	/*@RequestMapping(value = { "/listStagioni" }, method = RequestMethod.GET)
+
+	@RequestMapping(value = { "/listStagioni" }, method = RequestMethod.GET)
 	public String listStagioni(ModelMap model) {
 		List<Stagione> stagioni = service.trovaTutteStagioni();
 		model.addAttribute("stagioni", stagioni); 
 		return "all_stagioni";
-	}*/
+	}
 	
 	@RequestMapping(value = { "/listAttori" }, method = RequestMethod.GET)
 	public String listAttori(ModelMap model) {
