@@ -9,7 +9,7 @@ import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
 
 @Repository("ProdottoCinematograficoDao")
-public class ProdottoCinematograficoDaoImpl extends ProdottoCinematograficoAbstract<Integer, ProdottoCinematografico> implements ProdottoCinematograficoDao{
+public class ProdottoCinematograficoDaoImpl extends AbstractDao<Integer, ProdottoCinematografico> implements ProdottoCinematograficoDao{
 
 	public List<Film> trovaTuttiFilm() {
 		Criteria criteria = createEntityCriteria();

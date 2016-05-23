@@ -4,14 +4,11 @@ package org.dstech.videoteca.dao;
 import java.util.List;
 
 import org.dstech.videoteca.model.Persona;
-import org.dstech.videoteca.dao.PersonaAbstractDao;
-import org.dstech.videoteca.dao.PersonaDao;
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository("personaDao")
-public class PersonaDaoImpl extends PersonaAbstractDao<Integer, Persona> implements PersonaDao{
+public class PersonaDaoImpl extends AbstractDao<Integer, Persona> implements PersonaDao{
 	
 	public Persona findByID(int id) {
 		return getByKey(id);
