@@ -47,6 +47,18 @@ public class User implements Persona{
 	@Size(min=1, max=50) 
 	@Column(name = "PASS", nullable = false)
 	private String pass;
+	
+	@Size(min=2, max=10) 
+	@Column(name = "RUOLO", nullable = false)
+	private String ruolo;
+	
+	public String getRuolo() {
+		return ruolo;
+	}
+
+	public void setRuolo(String ruolo) {
+		this.ruolo = ruolo;
+	}
 
 	public int getId() {
 		return id;
@@ -106,7 +118,7 @@ public class User implements Persona{
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", data_di_nascita=" + data_di_nascita
+		return "User [id=" + id + ", ruolo=" + ruolo + ", nome=" + nome + ", cognome=" + cognome + ", data_di_nascita=" + data_di_nascita
 				+ ", user=" + user + ", pass=" + pass + "]";
 	}
 

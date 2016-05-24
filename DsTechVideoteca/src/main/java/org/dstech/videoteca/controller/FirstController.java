@@ -27,46 +27,59 @@ public class FirstController {
 	MessageSource messageSource;
 	
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
-	public String Index(ModelMap model) {
+	public String index(ModelMap model) {
+		System.out.println("siamo passati dalla index");
 		return "index";
 	}
 	
-	@RequestMapping(value = { "/trovaPersone" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/Access_Denied" }, method = RequestMethod.POST)
+	public String accessDenied(ModelMap model) {
+		System.out.println("siamo passati dal accesso negato");
+		return "Access_Denied";
+	}
+	
+	@RequestMapping(value = { "/guest/welcome_page" }, method = RequestMethod.POST)
+	public String welcomePage(ModelMap model) {
+		System.out.println("siamo passati dalla welcome_page");
+		return "welcome_page";
+	}
+	
+	@RequestMapping(value = { "/guest/trovaPersone" }, method = RequestMethod.GET)
 	public String trovaPersone(ModelMap model) {
 		List<User> persona = service.trovaPersone();
 		model.addAttribute("persona", persona);
 		return "all_user";
 	}
 	
-	@RequestMapping(value = { "/listSerieTv" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/guest/listSerieTv" }, method = RequestMethod.GET)
 	public String listSerieTv(ModelMap model) {
 		List<SerieTv> serieTv = service.trovaTutteSerieTv();
 		model.addAttribute("serieTv", serieTv); 
 		return "all_serieTv";
 	}
 	
-	@RequestMapping(value = { "/listFilm" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/guest/listFilm" }, method = RequestMethod.GET)
 	public String listFilm(ModelMap model) {
 		List<Film> film = service.trovaTuttiFilm();
 		model.addAttribute("film", film); 
 		return "all_film";
 	}
 	
-	@RequestMapping(value = { "/listCategorie" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/guest/listCategorie" }, method = RequestMethod.GET)
 	public String listCategorie(ModelMap model) {
 		List<Categoria> categorie = service.trovaTutteCategorie();
 		model.addAttribute("categorie", categorie); 
 		return "all_categorie";
 	}
 
-	@RequestMapping(value = { "/listStagioni" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/guest/listStagioni" }, method = RequestMethod.GET)
 	public String listStagioni(ModelMap model) {
 		List<Stagione> stagioni = service.trovaTutteStagioni();
 		model.addAttribute("stagioni", stagioni); 
 		return "all_stagioni";
 	}
 	
-	@RequestMapping(value = { "/listAttori" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/guest/listAttori" }, method = RequestMethod.GET)
 	public String listAttori(ModelMap model) {
 		List<Attore> attori = service.trovaTuttiAttori();
 		model.addAttribute("attori", attori); 
