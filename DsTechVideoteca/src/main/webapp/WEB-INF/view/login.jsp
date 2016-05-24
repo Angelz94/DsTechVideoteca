@@ -22,7 +22,7 @@
 					-- Benvenuto nella Videoteca DsTech --
 				</h3>
 				<br>
-				<form action="guest/welcome_page" method="POST">
+				<form action="login" method="POST">
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Email</label>
 					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="ssoId">

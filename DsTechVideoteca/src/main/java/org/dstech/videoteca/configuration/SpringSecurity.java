@@ -28,10 +28,10 @@ public class SpringSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
     	System.out.println("siamo passati dal configure");
     	http.authorizeRequests()
-    	.antMatchers("/").permitAll()
+    	.antMatchers("/", "/home").permitAll()
         .antMatchers("/admin/**").access("hasRole('ADMIN')")
         .antMatchers("/guest/**").access("hasRole('GUEST') and hasRole('ADMIN')")
-        .and().formLogin().loginPage("/")
+        .and().formLogin().loginPage("/login")
         .usernameParameter("ssoId").passwordParameter("password")
         .and().csrf()
         .and().exceptionHandling().accessDeniedPage("/Access_Denied");

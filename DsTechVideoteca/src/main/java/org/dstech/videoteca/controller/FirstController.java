@@ -26,10 +26,10 @@ public class FirstController {
 	@Autowired
 	MessageSource messageSource;
 	
-	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public String index(ModelMap model) {
 		System.out.println("siamo passati dalla index");
-		return "index";
+		return "welcome_page";
 	}
 	
 	@RequestMapping(value = { "/Access_Denied" }, method = RequestMethod.POST)
@@ -78,6 +78,12 @@ public class FirstController {
 		model.addAttribute("stagioni", stagioni); 
 		return "all_stagioni";
 	}
+	
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginPage() {
+        return "login";
+    }
+
 	
 	@RequestMapping(value = { "/guest/listAttori" }, method = RequestMethod.GET)
 	public String listAttori(ModelMap model) {
