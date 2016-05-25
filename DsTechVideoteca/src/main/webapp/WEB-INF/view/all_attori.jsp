@@ -22,12 +22,12 @@
 		<tr>
 			<td>NOME</td><td>COGNOME</td><td>data_di_nascita</td><td>CF</td>
 		</tr>
-		<c:forEach items="${attori}" var="attori"  > 
+		<c:forEach items="${attori}" var="attori1"  > 
 			<tr>
-			<td>${attori.nome}</td>
-			<td>${attori.cognome}</td>
-			<td>${attori.dataDiNascita}</td>
-			<td>${attori.CF}</td>
+			<td>${attori1.nome}</td>
+			<td>${attori1.cognome}</td>
+			<td>${attori1.dataDiNascita}</td>
+			<td>${attori1.CF}</td>
 			</tr>
 		</c:forEach>
 	</table>
