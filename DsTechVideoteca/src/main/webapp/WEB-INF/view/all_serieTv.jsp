@@ -22,10 +22,10 @@
 		<tr>
 			<td>TITOLO</td><td>CATEGORIA</td>
 		</tr>
-		<c:forEach items="${serieTv}" var="serieTv"  > 
+		<c:forEach items="${serieTv}" var="serie"  > 
 			<tr>
-			<td>${serieTv.titolo}</td>
-			<td>${serieTv.categoria.nome}</td>
+			<td>${serie.titolo}</td>
+			<td>${serie.categoria.nome}</td>
 			</tr>
 		</c:forEach>
 	</table>

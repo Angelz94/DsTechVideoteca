@@ -133,10 +133,11 @@
 		</br>
 			<div id="nav">
 				<ul>
-					<li><a href="guest/listSerieTv"><b>Ricerca Serie Tv<b></a></li>
-					<li><a href="guest/listFilm"><b>Ricerca Serie Film<b></a></li>
-					<li><a href="guest/listAttori"><b>Ricerca Attore<b></a></li>
-					<li><a href="/home"><b>Logout<b></a></li>
+					<li><a href="listSerieTv"><b>Ricerca Serie Tv<b></a></li>
+					<li><a href="listFilm"><b>Ricerca Film<b></a></li>
+					<li><a href="listAttori"><b>Ricerca Attore<b></a></li>
+					<li><a href="listCategorie"><b>Ricerca Categoria<b></a></li>
+					<li><a href="/DsTechVideoteca/home"><b>Logout<b></a></li>
 				</ul>
 			</div>
 		</form>

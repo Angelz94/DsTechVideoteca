@@ -16,21 +16,54 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-
 @Entity
-@Table(name = "serieTv",catalog ="videoteca")
+@Table(name = "serieTv", catalog = "videoteca")
+public class SerieTv implements ProdottoCinematografico, java.io.Serializable {
 
+	// public SerieTv(){
+	//
+	// }
+	// public SerieTv(String titolo,int durata ){
+	// this.titolo=titolo;
+	//
+	//
+	// }
+	// public SerieTv(String titolo,int durata,Set<Attore> attore){
+	// this.titolo=titolo;
+	// this.attore=attore;
+	// }
 
-public class SerieTv implements ProdottoCinematografico,java.io.Serializable{
-	
-	
-	
-	@ManyToMany(fetch=FetchType.EAGER,mappedBy= "serieTv")
-	private Set<Attore> attore=new HashSet<Attore>(0);
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "SERIETV_ID", unique = true, nullable = false)
+	private int id;
+
+	// public SerieTv(){
+	//
+	// }
+	// public SerieTv(String titolo,int durata ){
+	// this.titolo=titolo;
+	//
+	//
+	// }
+	// public SerieTv(String titolo,int durata,Set<Attore> attore){
+	// this.titolo=titolo;
+	// this.attore=attore;
+	// }
+
+	@Size(min = 1, max = 50)
+	@Column(name = "TITOLO", nullable = false)
+	private String titolo;
+
+	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "serieTv")
+	private Set<Attore> attore = new HashSet<Attore>(0);
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "CATEGORIA", nullable = false)
 	private Categoria categoria;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "serieTv")
+	private Set<Stagione> stagione;
+
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -39,10 +72,6 @@ public class SerieTv implements ProdottoCinematografico,java.io.Serializable{
 		this.categoria = categoria;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "serieTv")
-	
-	private Set<Stagione> stagione;
-	
 	public Set<Stagione> getStagione() {
 		return stagione;
 	}
@@ -50,31 +79,19 @@ public class SerieTv implements ProdottoCinematografico,java.io.Serializable{
 	public void setStagione(Set<Stagione> stagione) {
 		this.stagione = stagione;
 	}
-	
 
-//public SerieTv(){
-//		
-//	}
-//    public SerieTv(String titolo,int durata ){
-//		this.titolo=titolo;
-//		
-//		
-//	}
-//    public SerieTv(String titolo,int durata,Set<Attore> attore){
-//		this.titolo=titolo;
-//		this.attore=attore;
-//    }
-    
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "SERIETV_ID", unique=true,nullable = false)
-	private int id;
-	
-	@Size(min=1, max=50) 
-	@Column(name = "TITOLO", nullable = false)
-	private String titolo;
-	
-
+	// public SerieTv(){
+	//
+	// }
+	// public SerieTv(String titolo,int durata ){
+	// this.titolo=titolo;
+	//
+	//
+	// }
+	// public SerieTv(String titolo,int durata,Set<Attore> attore){
+	// this.titolo=titolo;
+	// this.attore=attore;
+	// }
 
 	public int getId() {
 		return id;
@@ -92,13 +109,9 @@ public class SerieTv implements ProdottoCinematografico,java.io.Serializable{
 		this.titolo = titolo;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "SerieTv [id=" + id + ", titolo=" + titolo + " ]";
 	}
 
-	
-	
 }
