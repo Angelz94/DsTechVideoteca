@@ -25,10 +25,10 @@ public class SerieTv implements ProdottoCinematografico,java.io.Serializable{
 	
 	
 	
-	@ManyToMany(fetch=FetchType.LAZY,mappedBy= "serieTv")
+	@ManyToMany(fetch=FetchType.EAGER,mappedBy= "serieTv")
 	private Set<Attore> attore=new HashSet<Attore>(0);
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "CATEGORIA", nullable = false)
 	private Categoria categoria;
 	public Categoria getCategoria() {
@@ -39,7 +39,7 @@ public class SerieTv implements ProdottoCinematografico,java.io.Serializable{
 		this.categoria = categoria;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "serieTv")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "serieTv")
 	
 	private Set<Stagione> stagione;
 	

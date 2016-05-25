@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name = "stagione",catalog ="videoteca")
 
 public class Stagione implements java.io.Serializable {
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "SERIE_TV", nullable = false)
 	private SerieTv serieTv;
 

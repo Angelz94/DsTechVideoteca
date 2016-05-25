@@ -31,14 +31,14 @@ public class User implements Persona{
 	private String cognome;
 	
 	@NotNull
-	@DateTimeFormat(pattern="dd/MM/yyyy") 
+	@DateTimeFormat(pattern="yyyy/MM/dd") 
 	@Column(name = "data_di_nascita", nullable = false)
 	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-	private LocalDate data_di_nascita;
+	private LocalDate dataDiNascita;
 	
 	@Size(min = 1, max = 50)
 	@Column(name = "CF", nullable = false)
-	private String CF;
+	private String codiceFiscale;
 
 	@Size(min=1, max=50) 
 	@Column(name = "USER", nullable = false)
@@ -85,15 +85,15 @@ public class User implements Persona{
 	}
 
 	public LocalDate getDataDiNascita() {
-		return data_di_nascita;
+		return dataDiNascita;
 	}
 
-	public void setDataDiNascita(LocalDate data_di_nascita) {
-		this.data_di_nascita = data_di_nascita;
+	public void setDataDiNascita(LocalDate dataDiNascita) {
+		this.dataDiNascita = dataDiNascita;
 	}
 	
-	public String getCF(String CF) {
-		return CF;
+	public String getCF() {
+		return codiceFiscale;
 	}
 	
 	public void setCF(String CF) {
@@ -118,7 +118,7 @@ public class User implements Persona{
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", ruolo=" + ruolo + ", nome=" + nome + ", cognome=" + cognome + ", data_di_nascita=" + data_di_nascita
+		return "User [id=" + id + ", ruolo=" + ruolo + ", nome=" + nome + ", cognome=" + cognome + ", data_di_nascita=" + dataDiNascita
 				+ ", user=" + user + ", pass=" + pass + "]";
 	}
 

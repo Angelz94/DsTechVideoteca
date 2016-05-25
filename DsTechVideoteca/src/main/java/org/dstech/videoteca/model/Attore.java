@@ -29,7 +29,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 		
 	public class Attore implements Persona,java.io.Serializable {
 	
-		@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+		@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 		@JoinTable(name = "attori_film", catalog = "videoteca", joinColumns = { 
 				@JoinColumn(name = "ATTORI_ID", nullable = false, updatable = false) }, 
 				inverseJoinColumns = { @JoinColumn(name = "FILM_ID", 
@@ -37,7 +37,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 		
 		private Set<Film> film=new HashSet<Film>(0);
 		
-		@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+		@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 		@JoinTable(name = "attori_serieTv", catalog = "videoteca", joinColumns = { 
 				@JoinColumn(name = "ATTORI_ID", nullable = false, updatable = false) }, 
 				inverseJoinColumns = { @JoinColumn(name = "SERIETV_ID", 
@@ -84,7 +84,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 	private String cognome;
 
 	@NotNull
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	@Column(name = "data_di_nascita", nullable = false)
 	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
 	private LocalDate data_di_nascita;

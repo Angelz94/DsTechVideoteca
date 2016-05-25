@@ -352,22 +352,25 @@ footer img:focus, footer a:focus {
 	<h1>Videoteca DsTech</h1>
 	<h3>By Gruppo Alpha</h3>
 	</hgroup>
-	<form>
+	
+	<form action="welcome_page" method="POST">
 		<div class="group">
 			<input type="text"><span class="highlight"></span><span
 				class="bar"></span> <label>User</label>
 		</div>
 		<div class="group">
-			<input type="email"><span class="highlight"></span><span
+			<input type="password"><span class="highlight"></span><span
 				class="bar"></span> <label>Password</label>
 		</div>
-		<button type="button" class="button buttonBlue">
+		
+		<button type="submit" class="button buttonBlue">
 			Subscribe
 			<div class="ripples buttonRipples">
 				<span class="ripplesCircle"></span>
 			</div>
-		</button>
-	</form>
+			</button>
+			</form>
+	
 
 	<footer> <a href="http://www.dstech.it" target="_blank"><img
 		src="http://www.dstech.it/images/27a9525c.logo_white.png"></a>

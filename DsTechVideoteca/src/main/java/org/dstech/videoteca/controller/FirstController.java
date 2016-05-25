@@ -26,7 +26,7 @@ public class FirstController {
 	@Autowired
 	MessageSource messageSource;
 	
-	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public String index(ModelMap model) {
 		System.out.println("siamo passati dalla index");
 		return "index3";

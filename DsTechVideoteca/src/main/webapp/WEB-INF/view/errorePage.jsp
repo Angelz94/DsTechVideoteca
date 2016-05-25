@@ -103,9 +103,9 @@ footer img:focus , footer a:focus { outline: none; }
 <hgroup>
 <h1>Ooops... Page not Found!</h1>
 <p><img class="flex" src="http://orig00.deviantart.net/d7ef/f/2012/356/9/1/known_memes_refreshed_by_me__ragemanderp__by_zcoogerchannel-d5otiys.png" alt="pini"></p>
-<button type="button" class="button buttonBlue" onclick="window.open('///////////////');">Home Page
+<a type="submit" class="button buttonBlue" href="/DsTechVideoteca/">Home Page
 	<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-</button>
+</a>
 </hgroup>
 <footer><a href="http://www.dstech.it" target="_blank"><img src="http://www.dstech.it/images/27a9525c.logo_white.png"></a>
   <p>You Gotta Love <a href="http://www.dstech.it" target="_blank">DsTech</a></p>

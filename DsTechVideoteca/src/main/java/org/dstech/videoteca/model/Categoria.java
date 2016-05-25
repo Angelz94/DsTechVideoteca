@@ -22,7 +22,7 @@ import javax.validation.constraints.Size;
 
 public class Categoria implements java.io.Serializable {
 	
-@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria")
+@OneToMany(fetch = FetchType.EAGER, mappedBy = "categoria")
 	
 	private Set<SerieTv> serieTv;
 	
@@ -34,7 +34,7 @@ public class Categoria implements java.io.Serializable {
 		this.serieTv = serieTv;
 	}
 	
-@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria")
+@OneToMany(fetch = FetchType.EAGER, mappedBy = "categoria")
 	
 	private Set<Film> film;
 	

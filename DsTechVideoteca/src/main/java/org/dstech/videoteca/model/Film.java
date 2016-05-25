@@ -24,10 +24,10 @@ import javax.validation.constraints.Size;
 
 public class Film implements ProdottoCinematografico,java.io.Serializable{
 
-	@ManyToMany(fetch=FetchType.LAZY,mappedBy= "film")
+	@ManyToMany(fetch=FetchType.EAGER,mappedBy= "film")
 private Set<Attore> attore=new HashSet<Attore>(0);
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "CATEGORIA", nullable = false)
 	private Categoria categoria;
 
