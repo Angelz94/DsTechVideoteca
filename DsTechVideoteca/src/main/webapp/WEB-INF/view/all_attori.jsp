@@ -26,7 +26,7 @@
 			<tr>
 			<td>${attori.nome}</td>
 			<td>${attori.cognome}</td>
-			<td>${attori.data_di_nascita}</td>
+			<td>${attori.dataDiNascita}</td>
 			<td>${attori.CF}</td>
 			</tr>
 		</c:forEach>

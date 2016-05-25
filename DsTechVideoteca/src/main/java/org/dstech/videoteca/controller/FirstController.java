@@ -71,7 +71,7 @@ public class FirstController {
 		return "all_film";
 	}
 	
-	@RequestMapping(value = { "/listCategorie" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/guest/listCategorie" }, method = RequestMethod.GET)
 	public String listCategorie(ModelMap model) {
 		List<Categoria> categorie = service.trovaTutteCategorie();
 		model.addAttribute("categories", categorie); 

@@ -87,7 +87,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	@Column(name = "data_di_nascita", nullable = false)
 	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-	private LocalDate data_di_nascita;
+	private LocalDate dataDiNascita;
 
 	@Size(min = 1, max = 50)
 	@Column(name = "CF", nullable = false)
@@ -118,11 +118,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 	}
 
 	public LocalDate getDataDiNascita() {
-		return data_di_nascita;
+		return dataDiNascita;
 	}
 
 	public void setDataDiNascita(LocalDate data_di_nascita) {
-		this.data_di_nascita = data_di_nascita;
+		this.dataDiNascita = data_di_nascita;
 	}
 
 	public String getCF() {
