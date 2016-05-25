@@ -1,6 +1,7 @@
 package org.dstech.videoteca.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.dstech.videoteca.model.Stagione;
 import org.dstech.videoteca.model.User;
@@ -66,8 +67,8 @@ public class FirstController {
 	
 	@RequestMapping(value = { "/guest/listFilm" }, method = RequestMethod.GET)
 	public String listFilm(ModelMap model) {
-		List<Film> film = service.trovaTuttiFilm();
-		model.addAttribute("films", film); 
+		List<Film> films = service.trovaTuttiFilm();
+		model.addAttribute("films", films); 
 		return "all_film";
 	}
 	

@@ -289,15 +289,15 @@
              <table>
    		    <tr>
    		    
-                <h2 class="title">${film.titolo} - ${film.durata} minuti-  ${film.categoria.nome}</h2>
+                <h2 class="title">${film.titolo} - ${film.durata} minuti -  ${film.categoria.nome}</h2>
                 <!-- CONTENT -->
                  </tr>
                  
                   </table>
                     
                  <ul class="features">
-                 <c:forEach items="${film.lista_attori}" var="attore"  >
-                    <li><span class="fontawesome-cog"></span>${attore.cognome} ${attore.nome}</li>
+                 <c:forEach items="${film.attore}" var="attore_singolo"  >
+                    <li><span class="fontawesome-cog"></span>${attore_singolo.cognome} ${attore_singolo.nome}</li>
                      </c:forEach>
                 </ul>
                 </div>
