@@ -364,12 +364,21 @@ footer img:focus, footer a:focus {
 		</div>
 		
 		<button type="submit" class="button buttonBlue">
-			Subscribe
+			Login
 			<div class="ripples buttonRipples">
 				<span class="ripplesCircle"></span>
 			</div>
 			</button>
+					<br>
+		<a href="guest/welcome_page" class="button buttonBlue">			
+			Vai al Sito
+			<div class="ripples buttonRipples">
+				<span class="ripplesCircle"></span>
+			</div>
+		</a>
+			
 			</form>
+
 	
 
 	<footer> <a href="http://www.dstech.it" target="_blank"><img

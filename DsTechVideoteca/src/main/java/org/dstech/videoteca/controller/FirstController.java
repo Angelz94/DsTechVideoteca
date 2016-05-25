@@ -38,8 +38,14 @@ public class FirstController {
 //		return "errorePage";
 //	}
 	
-	@RequestMapping(value = { "/welcome_page" }, method = RequestMethod.POST)
+	@RequestMapping(value = { "/guest/welcome_page" }, method = RequestMethod.POST)
 	public String welcomePage(ModelMap model) {
+		System.out.println("siamo passati dalla welcome_page");
+		return "welcome_page";
+	}
+	
+	@RequestMapping(value = { "/guest/welcome_page" }, method = RequestMethod.GET)
+	public String welcomePageGet(ModelMap model) {
 		System.out.println("siamo passati dalla welcome_page");
 		return "welcome_page";
 	}
@@ -51,14 +57,14 @@ public class FirstController {
 		return "all_user";
 	}
 	
-	@RequestMapping(value = { "/listSerieTv" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/guest/listSerieTv" }, method = RequestMethod.GET)
 	public String listSerieTv(ModelMap model) {
 		List<SerieTv> serieTv = service.trovaTutteSerieTv();
 		model.addAttribute("serieTv", serieTv); 
 		return "all_serieTv";
 	}
 	
-	@RequestMapping(value = { "/listFilm" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/guest/listFilm" }, method = RequestMethod.GET)
 	public String listFilm(ModelMap model) {
 		List<Film> film = service.trovaTuttiFilm();
 		model.addAttribute("films", film); 
@@ -79,7 +85,7 @@ public class FirstController {
 		return "all_stagioni";
 	}
 	
-	@RequestMapping(value = { "/listAttori" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/guest/listAttori" }, method = RequestMethod.GET)
 	public String listAttori(ModelMap model) {
 		List<Attore> attori = service.trovaTuttiAttori();
 		model.addAttribute("attori", attori); 

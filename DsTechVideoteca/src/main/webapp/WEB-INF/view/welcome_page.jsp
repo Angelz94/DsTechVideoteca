@@ -133,9 +133,10 @@
 		</br>
 			<div id="nav">
 				<ul>
-					<li><a href="///////////"><b>Ricerca Serie Tv<b></a></li>
-					<li><a href="//////////"><b>Ricerca Serie Film<b></a></li>
-					<li><a href="//////////"><b>Ricerca Attore<b></a></li>
+					<li><a href="guest/listSerieTv"><b>Ricerca Serie Tv<b></a></li>
+					<li><a href="guest/listFilm"><b>Ricerca Serie Film<b></a></li>
+					<li><a href="guest/listAttori"><b>Ricerca Attore<b></a></li>
+					<li><a href="/home"><b>Logout<b></a></li>
 				</ul>
 			</div>
 		</form>
