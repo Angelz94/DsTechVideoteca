@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 //import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
@@ -13,7 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @ComponentScan(basePackages = "org.dstech.videoteca")
 //@Import({ SpringSecurity.class })
-public class SpringConfiguration {
+public class SpringConfiguration extends WebMvcConfigurerAdapter{
 
 	@Bean
 	public ViewResolver viewResolver(){

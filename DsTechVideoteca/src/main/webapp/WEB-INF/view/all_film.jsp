@@ -283,6 +283,7 @@
 	</div>
             <!-- PERSONAL -->
            
+            			<input type="hidden" name ="${_csrf.parameterName}" value="${_csrf.token}" />
             
          <c:forEach items="${films}" var="film"  >
             <div class="block personal fl">
